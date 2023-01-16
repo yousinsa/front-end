@@ -7,7 +7,7 @@ import styled from "styled-components";
 const NavigationBar = () => {
   return (
     <NavbarDiv>
-      <Navbar bg="dark" variant="dark" style={{ height: "8vh" }}>
+      <Navbar bg="dark" variant="dark" style={{ height: "10vh" }}>
         <Container>
           <Navbar.Brand href="/" style={{ fontSize: "1.5rem" }}>
             YouSinsa

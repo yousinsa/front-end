@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const mypage = () => {
+const Mypage = () => {
     return (
         <div>
             mypage
@@ -9,4 +9,4 @@ const mypage = () => {
     );
 };
 
-export default mypage;
+export default Mypage;

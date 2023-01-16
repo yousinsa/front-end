@@ -10,14 +10,17 @@ const NavigationBar = () => {
       <Navbar bg="dark" variant="dark" style={{ height: "10vh" }}>
         <Container>
           <Navbar.Brand href="/" style={{ fontSize: "1.5rem" }}>
-            YouSinsa
+            You💖Sinsa
           </Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="/login">Login</Nav.Link>
-            <Nav.Link href="/cart">Cart</Nav.Link>
-            <Nav.Link href="/login">Upload</Nav.Link>
-            <Nav.Link href="/mypage">Mypage</Nav.Link>
-          </Nav>
+          <NavbarItemContainer>
+            <Nav className="me-auto">
+              <Nav.Link href="/community">Community</Nav.Link>
+              <Nav.Link href="/cart">Cart</Nav.Link>
+              <Nav.Link href="/login">Upload</Nav.Link>
+              <Nav.Link href="/mypage">Mypage</Nav.Link>
+              <Nav.Link href="/login">Login</Nav.Link>
+            </Nav>
+          </NavbarItemContainer>
         </Container>
       </Navbar>
     </NavbarDiv>
@@ -26,6 +29,9 @@ const NavigationBar = () => {
 
 const NavbarDiv = styled.header`
   width: 100vw;
+`;
+const NavbarItemContainer = styled.div`
+  font-size: 1.2rem;
 `;
 
 export default NavigationBar;

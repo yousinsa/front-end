@@ -29,4 +29,5 @@ const FooterTextDiv = styled.div`
   align-items: center;
 `;
 const FooterInnerTextDiv = styled.div``;
+
 export default Footer;

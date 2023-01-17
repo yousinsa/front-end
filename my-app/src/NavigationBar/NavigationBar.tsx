@@ -10,11 +10,13 @@ const NavigationBar = () => {
       <Navbar bg="dark" variant="dark" style={{ height: "10vh" }}>
         <Container>
           <Navbar.Brand href="/" style={{ fontSize: "1.5rem" }}>
-            You💖Sinsa
+            YouSinsa
           </Navbar.Brand>
           <NavbarItemContainer>
             <Nav className="me-auto">
               <Nav.Link href="/community">Community</Nav.Link>
+              <Nav.Link href="/goods">Goods</Nav.Link>
+              <Nav.Link href="/register">Register</Nav.Link>
               <Nav.Link href="/cart">Cart</Nav.Link>
               <Nav.Link href="/login">Upload</Nav.Link>
               <Nav.Link href="/mypage">Mypage</Nav.Link>

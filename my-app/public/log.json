@@ -1,0 +1,37 @@
+{
+    "login":[
+        {
+            "href":"/community",
+            "name":"Community"
+        },
+        {
+            "href":"/cart",
+            "name":"cart"
+        },
+        {
+            "href":"/logout",
+            "name":"Logout"
+        },
+        {
+            "href":"/mypage",
+            "name":"MyPage"
+        },
+        {
+            "href":"/goods",
+            "name":"goods"
+        }
+    ],
+    "logouted":[
+        {
+            "href":"/community",
+            "name":"Community"
+        }, {
+            "href":"/goods",
+            "name":"goods"
+        },
+        {
+            "href":"/login",
+            "name":"Login"
+        }
+    ]
+}

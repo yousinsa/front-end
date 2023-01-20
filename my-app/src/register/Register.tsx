@@ -28,13 +28,20 @@ const Register = () => {
           </Form.Group>
           <Form.Group
             as={Row}
-            className="mb-3"
+            className="mb-3 d-flex flex-column"
             controlId="formPlaintextPassword"
           >
             <Col sm>
-              <Form.Control type="password" placeholder="Email" />
+              <Form.Control type="email" placeholder="Email" />
             </Col>
           </Form.Group>
+          <Button
+            style={{ marginBottom: "5px", height: "80%" }}
+            variant="secondary"
+            type="submit"
+          >
+            인증
+          </Button>
 
           <Form.Group
             as={Row}
@@ -89,7 +96,7 @@ const RegisterFormOutContainer = styled.div`
   background-color: white;
   box-shadow: 5px 5px 26px 5px lightgray;
   width: 30%;
-  height: 60%;
+  height: 70%;
   display: grid;
   align-content: center;
 `;

@@ -25,7 +25,7 @@ const NavigationBar = () => {
               <Nav.Link href="/community">Community</Nav.Link>
               <Nav.Link href="/register">Register</Nav.Link>
               <Nav.Link href="/cart">Cart</Nav.Link>
-              <Nav.Link href="/login">Upload</Nav.Link>
+              <Nav.Link href="/upload">Upload</Nav.Link>
               <Nav.Link href="/mypage">Mypage</Nav.Link>
               <Nav.Link href="/login">Login</Nav.Link>
             </Nav>

@@ -5,13 +5,24 @@ import Navbar from "react-bootstrap/Navbar";
 import styled from "styled-components";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { DiYeoman } from "react-icons/di";
 
 const NavigationBar = () => {
   return (
     <NavbarDiv>
       <Navbar bg="dark" variant="dark" style={{ height: "10vh" }}>
         <Container>
-          <Navbar.Brand href="/" style={{ fontSize: "1.5rem" }}>
+          <Navbar.Brand
+            href="/"
+            style={{
+              fontSize: "1.8rem",
+
+              width: "13%",
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            <DiYeoman size="30" />
             YouSinsa
           </Navbar.Brand>
           <NavbarItemContainer>

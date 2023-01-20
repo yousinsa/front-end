@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import styled from "styled-components";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const NavigationBar = () => {
   return (
@@ -24,11 +25,14 @@ const NavigationBar = () => {
               </NavDropdown>
               <Nav.Link href="/community">Community</Nav.Link>
 
-              <Nav.Link href="/cart">Cart</Nav.Link>
               <Nav.Link href="/upload">Upload</Nav.Link>
+
               <Nav.Link href="/mypage">Mypage</Nav.Link>
               <Nav.Link href="/login">Login</Nav.Link>
               <Nav.Link href="/register">Register</Nav.Link>
+              <Nav.Link href="/cart">
+                <AiOutlineShoppingCart size="35" />
+              </Nav.Link>
             </Nav>
           </NavbarItemContainer>
         </Container>

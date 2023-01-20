@@ -18,7 +18,7 @@ const MyPage = () => {
           </ItemInnerContainer>
           <ItemInnerContainer>
             <BsCardImage size="50"></BsCardImage>
-            <ItemText>UpLoad</ItemText>
+            <ItemText>UpLoaded</ItemText>
           </ItemInnerContainer>
           <ItemInnerContainer>
             <MdOutlinePayment size="50"></MdOutlinePayment>

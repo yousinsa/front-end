@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import styled from "styled-components";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 const NavigationBar = () => {
   return (
@@ -14,8 +15,14 @@ const NavigationBar = () => {
           </Navbar.Brand>
           <NavbarItemContainer>
             <Nav className="me-auto">
+              <NavDropdown title="Goods" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/goods">man</NavDropdown.Item>
+                <NavDropdown.Item href="/goods">woman</NavDropdown.Item>
+                <NavDropdown.Item href="/goods">Accessories</NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item href="/goods">Etc</NavDropdown.Item>
+              </NavDropdown>
               <Nav.Link href="/community">Community</Nav.Link>
-              <Nav.Link href="/goods">Goods</Nav.Link>
               <Nav.Link href="/register">Register</Nav.Link>
               <Nav.Link href="/cart">Cart</Nav.Link>
               <Nav.Link href="/login">Upload</Nav.Link>

@@ -12,6 +12,7 @@ import Logout from "./Logout/Logout";
 import Goods from "./Goods/Goods";
 import FindId from "./FindUser/FindId";
 import FindPassword from "./FindUser/FindPassword";
+import Upload from "./Upload/Upload";
 import "./App.css";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path="/goods" element={<Goods />} />
         <Route path="/findid" element={<FindId />} />
         <Route path="/findpassword" element={<FindPassword />} />
+        <Route path="/upload" element={<Upload />} />
       </Routes>
       <Footer />
     </div>

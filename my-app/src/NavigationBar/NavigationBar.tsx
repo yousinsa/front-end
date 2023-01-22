@@ -10,7 +10,12 @@ import { DiYeoman } from "react-icons/di";
 const NavigationBar = () => {
   return (
     <NavbarDiv>
-      <Navbar bg="dark" variant="dark" style={{ height: "10vh" }}>
+      <Navbar
+        className="fixed-top"
+        bg="dark"
+        variant="dark"
+        style={{ height: "10vh" }}
+      >
         <Container>
           <Navbar.Brand
             href="/"

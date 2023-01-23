@@ -3,7 +3,7 @@ import axios from "axios";
 const Api = () => {
   useEffect(() => {
     axios
-      .get("/api/v1/search/shop.json", {
+      .get("/v1/search/shop.json", {
         params: {
           query: "모자",
           display: 20,
@@ -13,7 +13,7 @@ const Api = () => {
           "X-Naver-Client-Secret": "cP3kkbtLj5",
         },
       })
-      .then((res) => console.log(res.data))
+      .then((res) => console.log(res))
       .catch((e) => {});
   });
   return <div></div>;

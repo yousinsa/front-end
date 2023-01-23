@@ -19,6 +19,7 @@ function App() {
   return (
     <div className="App">
       <NavigationBar />
+
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/register" element={<Register />} />

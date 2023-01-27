@@ -9,10 +9,13 @@ import Footer from "./Footer/Footer";
 import Community from "./Community/Community";
 import { Routes, Route } from "react-router-dom";
 import Logout from "./Logout/Logout";
-import Goods from "./Goods/Goods";
+import Goods from "./Goods/util/Goods";
 import FindId from "./FindUser/FindId";
 import FindPassword from "./FindUser/FindPassword";
 import Upload from "./Upload/Upload";
+import Woman from "./Goods/Category/Woman";
+import Man from "./Goods/Category/Man";
+import Accessory from "./Goods/Category/Accessory";
 import "./App.css";
 
 function App() {
@@ -32,6 +35,9 @@ function App() {
         <Route path="/findid" element={<FindId />} />
         <Route path="/findpassword" element={<FindPassword />} />
         <Route path="/upload" element={<Upload />} />
+        <Route path="/goods/man" element={<Man />} />
+        <Route path="/goods/woman" element={<Woman />} />
+        <Route path="/goods/accessory" element={<Accessory />} />
       </Routes>
       <Footer />
     </div>

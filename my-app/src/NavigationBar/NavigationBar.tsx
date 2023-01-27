@@ -33,11 +33,11 @@ const NavigationBar = () => {
           <NavbarItemContainer>
             <Nav className="me-auto">
               <NavDropdown title="Goods" id="basic-nav-dropdown">
-                <NavDropdown.Item href="/goods">man</NavDropdown.Item>
-                <NavDropdown.Item href="/goods">woman</NavDropdown.Item>
-                <NavDropdown.Item href="/goods">Accessories</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="/goods">Etc</NavDropdown.Item>
+                <NavDropdown.Item href="/goods/man">man</NavDropdown.Item>
+                <NavDropdown.Item href="/goods/woman">woman</NavDropdown.Item>
+                <NavDropdown.Item href="/goods/accessory">
+                  Accessories
+                </NavDropdown.Item>
               </NavDropdown>
               <Nav.Link href="/community">Community</Nav.Link>
 

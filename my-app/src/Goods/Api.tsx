@@ -5,8 +5,8 @@ const Api = () => {
     axios
       .get("/v1/search/shop.json", {
         params: {
-          query: "모자",
-          display: 20,
+          query: "여성",
+          display: 100,
         },
         headers: {
           "X-Naver-Client-Id": "eLni7U4bHXMbke6NNVD1",

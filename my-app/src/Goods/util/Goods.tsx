@@ -8,6 +8,7 @@ import SideBar from "./SideBar";
 import Search from "./Search";
 import ScrollBar from "./ScrollBar";
 
+console.log(process.env);
 const Goods = () => {
   return (
     <GoodsContainer>

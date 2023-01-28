@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
+
 const Api = () => {
   useEffect(() => {
     axios
@@ -9,8 +10,8 @@ const Api = () => {
           display: 100,
         },
         headers: {
-          "X-Naver-Client-Id": "eLni7U4bHXMbke6NNVD1",
-          "X-Naver-Client-Secret": "cP3kkbtLj5",
+          "X-Naver-Client-Id": process.env.REACT_APP_CLIENT_ID,
+          "X-Naver-Client-Secret": process.env.REACT_APP_CLIENT_SECRET,
         },
       })
       .then((res) => console.log(res))

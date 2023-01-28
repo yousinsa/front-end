@@ -27,7 +27,7 @@ const NavigationBar = () => {
               justifyContent: "space-between",
             }}
           >
-            <DiYeoman size="30" />
+            <DiYeoman size="30px" />
             YouSinsa
           </Navbar.Brand>
           <NavbarItemContainer>

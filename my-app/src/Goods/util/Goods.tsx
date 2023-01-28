@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+
 import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
+
 import SideBar from "./SideBar";
 import Search from "./Search";
 import ScrollBar from "./ScrollBar";

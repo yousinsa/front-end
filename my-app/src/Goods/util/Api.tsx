@@ -7,7 +7,7 @@ import axios from "axios";
 import styled from "styled-components";
 
 const Api = () => {
-  const [data, setData] = useState<any[]>([]);
+  let [data, setData] = useState<any[]>([]);
   useEffect(() => {
     axios
       .get("/v1/search/shop.json", {
@@ -26,7 +26,6 @@ const Api = () => {
       .catch((e) => {});
   }, []);
 
-  console.log(data);
   return (
     <Container>
       <Row xs={1} md={3} className="g-4 d-flex justify-content-center">

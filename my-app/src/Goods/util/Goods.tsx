@@ -7,6 +7,7 @@ import Card from "react-bootstrap/Card";
 import SideBar from "./SideBar";
 import Search from "./Search";
 import ScrollBar from "./ScrollBar";
+import Api from "./Api";
 
 console.log(process.env);
 const Goods = () => {
@@ -16,33 +17,7 @@ const Goods = () => {
 
       <GoodsInnerContainer>
         <SideBar />
-        <Row xs={1} md={3} className="g-4 d-flex justify-content-center">
-          {Array.from({ length: 8 })
-            .fill(0)
-            .map(() => {
-              return (
-                <>
-                  <Col>
-                    {" "}
-                    <Card style={{ width: "18rem" }}>
-                      <Card.Img
-                        variant="top"
-                        src="https://i.pinimg.com/736x/e7/88/12/e78812406ffcdff8c386b9bee8ca3478.jpg"
-                      />
-                      <Card.Body>
-                        <Card.Title>Card Title</Card.Title>
-                        <Card.Text>
-                          Some quick example text to build on the card title and
-                          make up the bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="dark">Go somewhere</Button>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                </>
-              );
-            })}
-        </Row>
+        <Api></Api>
       </GoodsInnerContainer>
       <MoreContentsDiv>
         <Button variant="dark" style={{ width: "10vw", height: "50%" }}>

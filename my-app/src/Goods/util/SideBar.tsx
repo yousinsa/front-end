@@ -13,9 +13,10 @@ const SideBar = () => {
 };
 
 const Container = styled.div`
-  width: 30vw;
+  width: 20vw;
   height: 70vh;
   display: grid;
+  margin-right: 50px;
 `;
 
 const ItemDiv = styled.div`

@@ -8,7 +8,6 @@ import Search from "./Search";
 import ScrollBar from "./ScrollBar";
 import Api from "./Api";
 
-console.log(process.env);
 const Goods = () => {
   return (
     <GoodsContainer>

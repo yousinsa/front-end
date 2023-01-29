@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import axios from "axios";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 
 const Api = () => {
   let [data, setData] = useState<any[]>([]);
+  let category = useSelector((state: any) => state.goodsInfo.category);
+
   useEffect(() => {
     axios
       .get("/v1/search/shop.json", {
         params: {
-          query: "여성",
+          query: category,
           display: 100,
         },
         headers: {
@@ -23,7 +25,9 @@ const Api = () => {
       .then((res) => {
         setData((prev) => [...prev, ...res.data.items]);
       })
-      .catch((e) => {});
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
 
   return (
@@ -44,7 +48,6 @@ const Api = () => {
                       {item.title.replace(/<[^>]*>?/g, "")}
                     </Card.Title>
                     <Card.Text>{item.lprice}원</Card.Text>
-                    <Button variant="dark">구매하기</Button>
                   </Card.Body>
                 </Card>
               </Col>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import Button from "react-bootstrap/Button";
@@ -31,7 +31,6 @@ const Goods = () => {
 
 const GoodsContainer = styled.div`
   width: 100vw;
-
   margin-top: 100px;
   position: relative;
 `;

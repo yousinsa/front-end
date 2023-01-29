@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { users } from './Slice/testSlice'
-// ...
+import  usersReducer  from './Slice/testSlice'
+import goodsInfoReducer from"./Slice/goodsSlice"
 const store = configureStore({
   reducer: {
-    // one: oneSlice.reducer,
-    // two: twoSlice.reducer,
-    users:users.reducer
+
+    goodsInfo:goodsInfoReducer,
+    users:usersReducer
   },
 })
 export type RootState = ReturnType<typeof store.getState>

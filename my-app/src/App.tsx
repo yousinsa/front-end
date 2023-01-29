@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Main from "./main/Main";
 import NavigationBar from "./NavigationBar/NavigationBar";
 import Register from "./register/Register";
@@ -17,8 +17,24 @@ import Woman from "./Goods/Category/Woman";
 import Man from "./Goods/Category/Man";
 import Accessory from "./Goods/Category/Accessory";
 import "./App.css";
+import { useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { goodsInfo } from "./Slice/goodsSlice";
 
 function App() {
+  let { pathname } = useLocation();
+  let dispatch = useDispatch();
+
+  if (pathname === "/goods/man") {
+    dispatch(goodsInfo("남성"));
+  }
+  if (pathname === "/goods/woman") {
+    dispatch(goodsInfo("여성"));
+  }
+  if (pathname === "/goods/accessory") {
+    dispatch(goodsInfo("악세서리"));
+  }
+
   return (
     <div className="App">
       <NavigationBar />

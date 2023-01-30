@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import MainCarousel from "./MainCarousel";
-import MainProductCard from "./MainProductCard";
-import VirtualProductCard from "./VirtualProductCard";
+import MainCarousel from "./util/MainCarousel";
+import MainProductCard from "./util/MainProductCard";
+import VirtualProductCard from "./util/VirtualProductCard";
 
 const Main = () => {
   return (

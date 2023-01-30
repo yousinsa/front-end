@@ -1,21 +1,27 @@
-import React, { useEffect, useState } from "react";
-import Main from "./main/Main";
-import NavigationBar from "./NavigationBar/NavigationBar";
-import Register from "./register/Register";
-import Login from "./Login/Login";
-import Cart from "./Cart/Cart";
-import MyPage from "./MyPage/MyPage";
-import Footer from "./Footer/Footer";
-import Community from "./Community/Community";
+import React from "react";
+import Main from "./Page/main/Main";
+import NavigationBar from "./components/NavigationBar/NavigationBar";
+import Register from "./Page/Register/Register";
+import Login from "./Page/Login/Login";
+import Cart from "./Page/Cart/Cart";
+import MyPage from "./Page/MyPage/MyPage";
+import Footer from "./components/Footer/Footer";
+import Community from "./Page/Community/Community";
 import { Routes, Route } from "react-router-dom";
-import Logout from "./Logout/Logout";
-import Goods from "./Goods/util/Goods";
-import FindId from "./FindUser/FindId";
-import FindPassword from "./FindUser/FindPassword";
-import Upload from "./Upload/Upload";
-import Woman from "./Goods/Category/Woman";
-import Man from "./Goods/Category/Man";
-import Accessory from "./Goods/Category/Accessory";
+
+import Goods from "./Page/Goods/Goods";
+import FindId from "./Page/FindUser/FindId";
+import FindPassword from "./Page/FindUser/FindPassword";
+import Upload from "./Page/Upload/Upload";
+import Woman from "./Page/Goods/services/Woman";
+import Man from "./Page/Goods/services/Man";
+import Accessory from "./Page/Goods/services/Accessory";
+import Information from "./Page/MyPage/services/Information";
+import MyStyle from "./Page/MyPage/services/MyStyle";
+import MyWritten from "./Page/MyPage/services/MyWritten";
+import Paid from "./Page/MyPage/services/Paid";
+import Payment from "./Page/MyPage/services/Payment";
+
 import "./App.css";
 import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -46,7 +52,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/mypage" element={<MyPage />} />
         <Route path="/community" element={<Community />} />
-        <Route path="/logout" element={<Logout />} />
+
         <Route path="/goods" element={<Goods />} />
         <Route path="/findid" element={<FindId />} />
         <Route path="/findpassword" element={<FindPassword />} />
@@ -54,6 +60,11 @@ function App() {
         <Route path="/goods/man" element={<Man />} />
         <Route path="/goods/woman" element={<Woman />} />
         <Route path="/goods/accessory" element={<Accessory />} />
+        <Route path="/mypage/information" element={<Information />} />
+        <Route path="/mypage/mystyle" element={<MyStyle />} />
+        <Route path="/mypage/mywritten" element={<MyWritten />} />
+        <Route path="/mypage/paid" element={<Paid />} />
+        <Route path="/mypage/payment" element={<Payment />} />
       </Routes>
       <Footer />
     </div>

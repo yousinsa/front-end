@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Goods from "../Goods";
+import Goods from "../service/Goods";
 
 const Man = () => {
   return (

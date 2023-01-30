@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import Button from "react-bootstrap/Button";
 
-import SideBar from "./util/SideBar";
-import Search from "./util/Search";
-import ScrollBar from "./util/ScrollBar";
-import Api from "./util/Api";
+import SideBar from "../util/SideBar";
+import Search from "../util/Search";
+import ScrollBar from "../util/ScrollBar";
+import Api from "../util/Api";
 
 const Goods = () => {
   return (

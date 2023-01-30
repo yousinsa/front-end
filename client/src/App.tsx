@@ -9,13 +9,13 @@ import Footer from "./components/Footer/Footer";
 import Community from "./Page/Community/Community";
 import { Routes, Route } from "react-router-dom";
 
-import Goods from "./Page/Goods/Goods";
+import Goods from "./Page/Goods/service/Goods";
 import FindId from "./Page/FindUser/FindId";
 import FindPassword from "./Page/FindUser/FindPassword";
 import Upload from "./Page/Upload/Upload";
-import Woman from "./Page/Goods/services/Woman";
-import Man from "./Page/Goods/services/Man";
-import Accessory from "./Page/Goods/services/Accessory";
+import Woman from "./Page/Goods/category/Woman";
+import Man from "./Page/Goods/category/Man";
+import Accessory from "./Page/Goods/category/Accessory";
 import Information from "./Page/MyPage/services/Information";
 import MyStyle from "./Page/MyPage/services/MyStyle";
 import MyWritten from "./Page/MyPage/services/MyWritten";

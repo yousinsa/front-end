@@ -1,5 +1,5 @@
 import React from "react";
-import Goods from "../Goods";
+import Goods from "../service/Goods";
 
 const Accessory = () => {
   return (

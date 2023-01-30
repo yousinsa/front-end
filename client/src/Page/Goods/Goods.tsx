@@ -3,10 +3,10 @@ import styled from "styled-components";
 
 import Button from "react-bootstrap/Button";
 
-import SideBar from "./SideBar";
-import Search from "./Search";
-import ScrollBar from "./ScrollBar";
-import Api from "./Api";
+import SideBar from "./util/SideBar";
+import Search from "./util/Search";
+import ScrollBar from "./util/ScrollBar";
+import Api from "./util/Api";
 
 const Goods = () => {
   return (

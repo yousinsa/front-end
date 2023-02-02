@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
+import { useForm } from "react-hook-form";
 import styled from "styled-components";
+import LoginData from "./LoginDaTa";
+
+type LoginType = {
+  email: string;
+  password: string;
+};
 
 const Login = () => {
+  const [userInfo, setUserInfo] = useState<LoginType>({
+    email: "",
+    password: "",
+  });
+  console.log(LoginData.filter((item) => item.id === "form"));
   return (
     <LoginOutContainer>
       <LoginFormOutContainer>
@@ -18,65 +29,40 @@ const Login = () => {
             alignItems: "center",
           }}
         >
-          <Form.Group
-            as={Row}
-            className="mb-3"
-            controlId="formPlaintextPassword"
-          >
-            <Col sm>
-              <Form.Control type="id" placeholder="UserID" />
-            </Col>
-          </Form.Group>
+          {LoginData.filter((item) => item.id === "form").map((item) => {
+            return (
+              <>
+                <Form.Group
+                  as={Row}
+                  className="mb-3"
+                  controlId="formPlaintextPassword"
+                >
+                  <Col sm>
+                    <Form.Control type={item.title} placeholder={item.title} />
+                  </Col>
+                </Form.Group>
+              </>
+            );
+          })}
 
-          <Form.Group
-            as={Row}
-            className="mb-3"
-            controlId="formPlaintextPassword"
-          >
-            <Col sm>
-              <Form.Control type="password" placeholder="Password" />
-            </Col>
-          </Form.Group>
           <br />
 
           <div className="d-grid gap-1">
-            <Button
-              variant="secondary"
-              type="submit"
-              style={{ height: "100%" }}
-            >
-              Sign In
-            </Button>
-            <a href="/register">
-              <Button
-                variant="secondary"
-                style={{ height: "100%", width: "100%" }}
-              >
-                Register
-              </Button>
-            </a>
-            <a href="/findid">
-              <Button
-                variant="secondary"
-                style={{ height: "100%", width: "100%" }}
-              >
-                id찾기
-              </Button>
-            </a>
-
-            <a href="/findpassword">
-              <Button
-                variant="secondary"
-                style={{ height: "100%", width: "100%" }}
-              >
-                비밀번호찾기
-              </Button>
-            </a>
+            {LoginData.filter((item) => item.id === "button").map((item) => {
+              return (
+                <>
+                  <a href={item.link}>
+                    <Button
+                      variant="secondary"
+                      style={{ height: "100%", width: "100%" }}
+                    >
+                      {item.title}
+                    </Button>
+                  </a>
+                </>
+              );
+            })}
           </div>
-
-          <SocialDiv className="d-grid ">
-            <SocialImg src="카카오버튼.png" alt="카카오버튼"></SocialImg>
-          </SocialDiv>
         </Form>
       </LoginFormOutContainer>
     </LoginOutContainer>
@@ -104,14 +90,6 @@ const LoginFormOutContainer = styled.div`
   height: 70%;
   display: grid;
   align-content: center;
-`;
-const SocialImg = styled.img`
-  height: 60%;
-  cursor: pointer;
-`;
-const SocialDiv = styled.div`
-  height: 60%;
-  justify-content: center;
 `;
 
 export default Login;

@@ -5,9 +5,9 @@ type Type ={
 }
 
 const LoginData:Type[] =[
-    {id:"form",title:"UserID",link:""},
-    {id:"form",title:"Password",link:""},
-    {id:"button",title:"Sign In",link:""},
+    {id:"form",title:"UserID",link:"email"},
+    {id:"form",title:"Password",link:"password"},
+
     {id:"button",title:"Register",link:"/register"},
     {id:"button",title:" id찾기",link:"/findid"},
     {id:"button",title:" 비밀번호찾기",link:"/findpassword"},

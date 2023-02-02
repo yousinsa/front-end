@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -13,11 +13,29 @@ type LoginType = {
 };
 
 const Login = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const [userInfo, setUserInfo] = useState<LoginType>({
     email: "",
     password: "",
   });
-  console.log(LoginData.filter((item) => item.id === "form"));
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    const newUserInfo = {
+      ...userInfo,
+      [name]: value,
+    };
+    setUserInfo(newUserInfo);
+  };
+
+  const handleToSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+  };
+
   return (
     <LoginOutContainer>
       <LoginFormOutContainer>
@@ -28,6 +46,7 @@ const Login = () => {
             justifyContent: "center",
             alignItems: "center",
           }}
+          onSubmit={handleToSubmit}
         >
           {LoginData.filter((item) => item.id === "form").map((item) => {
             return (
@@ -38,7 +57,10 @@ const Login = () => {
                   controlId="formPlaintextPassword"
                 >
                   <Col sm>
-                    <Form.Control type={item.title} placeholder={item.title} />
+                    <Form.Control
+                      {...register(`${item.link}`)}
+                      onChange={handleChange}
+                    />
                   </Col>
                 </Form.Group>
               </>
@@ -48,6 +70,13 @@ const Login = () => {
           <br />
 
           <div className="d-grid gap-1">
+            <Button
+              variant="secondary"
+              type="submit"
+              style={{ height: "100%" }}
+            >
+              Sign In
+            </Button>
             {LoginData.filter((item) => item.id === "button").map((item) => {
               return (
                 <>

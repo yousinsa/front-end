@@ -31,21 +31,19 @@ const Login = () => {
       [name]: value,
     };
     setUserInfo(newUserInfo);
-    console.log(userInfo);
   };
 
   const handleToSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const { email, password } = userInfo;
     let body = {
-      email: email,
+      memberId: email,
       password: password,
     };
 
     try {
-      const response = await axios.post("", body);
+      const response = await axios.post("/v2/api/auth/login", body);
       const token = await response.data.accessToken;
-
       localStorage.setItem("jwtToken", token);
       SetAuthorizationToken(token);
       const decodedtoken = decodeToken(token);

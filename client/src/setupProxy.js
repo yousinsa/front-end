@@ -9,7 +9,7 @@ module.exports = function (app) {
     })
   );
   app.use(
-    "/api",
+    "/v2",
     createProxyMiddleware({
       target: "http://whalsght.synology.me:8080",
       changeOrigin: true,

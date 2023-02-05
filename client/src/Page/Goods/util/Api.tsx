@@ -11,6 +11,8 @@ const Api = () => {
   let category = useSelector((state: any) => state.goodsInfo.category);
 
   useEffect(() => {
+    delete axios.defaults.headers.common["Authorization"];
+    // 로그인시 axios 헤더값이 기본으로 설정되있기때문에 삭제 해줘야됨
     axios
       .get("/v1/search/shop.json", {
         params: {

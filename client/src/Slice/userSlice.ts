@@ -1,15 +1,21 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export type User = {
-    loading:string;
-    user:string[]
+    email:string;
+    exp:number;
+    iat:0;
+    id:0;
+    name:string;
+    phoneNumber:string
   };
 
 
 
 const initialState: User = {
-    loading: 'idle',
-    user: [],
+ 
+     email: "", exp: 0, iat: 0, id: 0, name: "", phoneNumber: "" 
+   
+   
   };
 
 
@@ -18,21 +24,13 @@ const initialState: User = {
     name: 'user',
     initialState,
     reducers: {
-      usersLoading(state, action) {
-        if (state.loading === 'idle') {
-          state.loading = 'pending'
-        }
-      },
-      usersReceived(state, action) {
-        if (state.loading === 'pending') {
-          state.loading = 'idle'
-          state.user = action.payload
-        }
+      setUserInformation: (state, action) => {
+        state = action.payload;
       },
     },
   })
   
 
 
-export const { usersLoading,usersReceived } = userSlice.actions;
+export const { setUserInformation } = userSlice.actions;
 export default userSlice.reducer

@@ -6,10 +6,18 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import store from "./store/store";
 import { Provider } from "react-redux";
-
+import { decodeToken } from "react-jwt";
+import SetAuthorizationToken from "./Page/Login/utils/SetAuthorizationToken";
+import { setUserInformation } from "./Slice/userSlice";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
+if (localStorage.jwtToken) {
+  SetAuthorizationToken(localStorage.jwtToken);
+  store.dispatch(setUserInformation(decodeToken(localStorage.jwtToken)));
+}
+
 root.render(
   <React.StrictMode>
     <Provider store={store}>

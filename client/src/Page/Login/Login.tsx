@@ -3,26 +3,27 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { useForm } from "react-hook-form";
+import { decodeToken } from "react-jwt";
 import styled from "styled-components";
-import LoginData from "./LoginDaTa";
+import LoginData from "./LoginData";
+import axios from "axios";
+import SetAuthorizationToken from "./utils/SetAuthorizationToken";
+import { useDispatch } from "react-redux";
+import { setUserInformation } from "../../Slice/userSlice";
 
+import { useNavigate } from "react-router-dom";
 type LoginType = {
   email: string;
   password: string;
 };
 
 const Login = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
   const [userInfo, setUserInfo] = useState<LoginType>({
     email: "",
     password: "",
   });
-
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     const newUserInfo = {
@@ -30,10 +31,29 @@ const Login = () => {
       [name]: value,
     };
     setUserInfo(newUserInfo);
+    console.log(userInfo);
   };
 
-  const handleToSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleToSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const { email, password } = userInfo;
+    let body = {
+      email: email,
+      password: password,
+    };
+
+    try {
+      const response = await axios.post("", body);
+      const token = await response.data.accessToken;
+
+      localStorage.setItem("jwtToken", token);
+      SetAuthorizationToken(token);
+      const decodedtoken = decodeToken(token);
+      dispatch(setUserInformation(decodedtoken));
+      navigate("/");
+    } catch (err) {
+      alert("아이디혹은 비밀번호가 잘못되었습니다.");
+    }
   };
 
   return (
@@ -57,10 +77,7 @@ const Login = () => {
                   controlId="formPlaintextPassword"
                 >
                   <Col sm>
-                    <Form.Control
-                      {...register(`${item.link}`)}
-                      onChange={handleChange}
-                    />
+                    <Form.Control name={item.link} onChange={handleChange} />
                   </Col>
                 </Form.Group>
               </>

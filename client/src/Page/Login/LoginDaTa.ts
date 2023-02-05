@@ -3,7 +3,6 @@ type Type ={
     title:string;
     link:string;
 }
-
 const LoginData:Type[] =[
     {id:"form",title:"UserID",link:"email"},
     {id:"form",title:"Password",link:"password"},

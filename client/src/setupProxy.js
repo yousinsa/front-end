@@ -8,4 +8,11 @@ module.exports = function (app) {
       changeOrigin: true,
     })
   );
+  app.use(
+    "/api",
+    createProxyMiddleware({
+      target: "http://whalsght.synology.me:8080",
+      changeOrigin: true,
+    })
+  );
 };

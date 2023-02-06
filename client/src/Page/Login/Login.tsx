@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useState, FormEvent } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -10,6 +10,7 @@ import axios from "axios";
 import SetAuthorizationToken from "./utils/SetAuthorizationToken";
 import { useDispatch } from "react-redux";
 import { setUserInformation } from "../../Slice/userSlice";
+import SocialLogin from "./utils/SocialLogin";
 
 import { useNavigate } from "react-router-dom";
 type LoginType = {
@@ -33,7 +34,7 @@ const Login = () => {
     setUserInfo(newUserInfo);
   };
 
-  const handleToSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleToSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const { email, password } = userInfo;
     let body = {
@@ -106,6 +107,7 @@ const Login = () => {
                 </>
               );
             })}
+            <SocialLogin />
           </div>
         </Form>
       </LoginFormOutContainer>

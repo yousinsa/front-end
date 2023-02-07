@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { decodeToken } from "react-jwt";
 import styled from "styled-components";
-import LoginData from "./LoginData";
+import LoginData from "./Data/LoginData";
 import axios from "axios";
 import SetAuthorizationToken from "./utils/SetAuthorizationToken";
 import { useDispatch } from "react-redux";
@@ -76,7 +76,11 @@ const Login = () => {
                   controlId="formPlaintextPassword"
                 >
                   <Col sm>
-                    <Form.Control name={item.link} onChange={handleChange} />
+                    <Form.Control
+                      type={item.link}
+                      name={item.link}
+                      onChange={handleChange}
+                    />
                   </Col>
                 </Form.Group>
               </>

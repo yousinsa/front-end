@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import styled from "styled-components";
+import RegisterData from "./Data/RegisterData";
 
 const Register = () => {
+  const [authCode, setAuthCode] = useState<boolean>(false);
+
   return (
     <RegisterOutContainer>
       <RegisterFormOutContainer>
@@ -17,24 +20,56 @@ const Register = () => {
             alignItems: "center",
           }}
         >
-          <Form.Group
-            as={Row}
-            className="mb-3"
-            controlId="formPlaintextPassword"
-          >
-            <Col sm>
-              <Form.Control type="password" placeholder="Username" />
-            </Col>
-          </Form.Group>
-          <Form.Group
-            as={Row}
-            className="mb-3 d-flex flex-column"
-            controlId="formPlaintextPassword"
-          >
-            <Col sm>
-              <Form.Control type="email" placeholder="Email" />
-            </Col>
-          </Form.Group>
+          {RegisterData.filter((item) => item.id === "email").map((item) => {
+            return (
+              <>
+                <Form.Group
+                  as={Row}
+                  className="mb-3"
+                  controlId="formPlaintextPassword"
+                >
+                  <Col sm>
+                    <Form.Control
+                      type={item.id}
+                      placeholder={item.placeHolder}
+                    />
+                  </Col>
+                </Form.Group>
+              </>
+            );
+          })}
+          {authCode && (
+            <Form.Group
+              as={Row}
+              className="mb-3"
+              controlId="formPlaintextPassword"
+            >
+              <Col sm>
+                <Form.Control
+                  style={{
+                    width: "180px",
+                    height: "100%",
+                    paddingTop: "10px",
+                    fontSize: "0.8rem",
+                  }}
+                  placeholder="인증코드를 입력하세요"
+                />
+              </Col>
+              <Col>
+                <Button
+                  variant="secondary"
+                  style={{
+                    justifyContent: "flex-end",
+                    width: "80px",
+                    height: "100%",
+                  }}
+                >
+                  인증
+                </Button>
+              </Col>
+            </Form.Group>
+          )}
+
           <Button
             style={{ marginBottom: "5px", height: "80%" }}
             variant="secondary"
@@ -42,37 +77,30 @@ const Register = () => {
           >
             인증
           </Button>
-
-          <Form.Group
-            as={Row}
-            className="mb-3"
-            controlId="formPlaintextPassword"
-          >
-            <Col sm>
-              <Form.Control type="password" placeholder="Password" />
-            </Col>
-          </Form.Group>
-
-          <Form.Group
-            as={Row}
-            className="mb-3"
-            controlId="formPlaintextPassword"
-          >
-            <Col sm>
-              <Form.Control type="password" placeholder="Confirm Password" />
-            </Col>
-          </Form.Group>
-
-          <br />
+          {RegisterData.filter((item) => item.id === "password").map((item) => {
+            return (
+              <>
+                <Form.Group
+                  as={Row}
+                  className="mb-3"
+                  controlId="formPlaintextPassword"
+                >
+                  <Col sm>
+                    <Form.Control
+                      type={item.id}
+                      placeholder={item.placeHolder}
+                    />
+                  </Col>
+                </Form.Group>
+              </>
+            );
+          })}
 
           <div className="d-grid gap-1">
             <Button variant="secondary" type="submit">
               Sign Up
             </Button>
           </div>
-          <SocialDiv className="d-grid ">
-            <SocialImg src="카카오버튼.png" alt="카카오버튼"></SocialImg>
-          </SocialDiv>
         </Form>
       </RegisterFormOutContainer>
     </RegisterOutContainer>
@@ -100,12 +128,5 @@ const RegisterFormOutContainer = styled.div`
   display: grid;
   align-content: center;
 `;
-const SocialImg = styled.img`
-  height: 60%;
-  cursor: pointer;
-`;
-const SocialDiv = styled.div`
-  height: 60%;
-  justify-content: center;
-`;
+
 export default Register;

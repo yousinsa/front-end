@@ -4,7 +4,7 @@ type Type ={
     title:string;
 }
 const RegisterData:Type[] =[
-    {id:"email",placeHolder:"Username",title:"name"},
+    {id:"email",placeHolder:"Username",title:"username"},
     {id:"email",placeHolder:"Email",title:"email"},
     {id:"password",placeHolder:"Password",title:"password"},
     {id:"password",placeHolder:"Confirm Password",title:"confirmPassword"},
